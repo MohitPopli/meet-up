@@ -5,6 +5,10 @@ const selectHomeState = (state: ApplicationRootState) => {
   return state.home;
 };
 
-const homeStateSelector = createStructuredSelector({});
+const selectCurrentDate = () => createSelector(selectHomeState, (state) => state.currentSelectedDate);
+
+const homeStateSelector = createStructuredSelector({
+  selectedDate: selectCurrentDate(),
+});
 
 export { homeStateSelector };

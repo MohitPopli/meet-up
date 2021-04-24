@@ -14,8 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  background-image: url('./assets/background.svg');
+  background-color: white;
   min-height: 100vh;
   display: flex;
   color: white;
