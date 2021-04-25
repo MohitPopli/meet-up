@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import Dialog from './Dialog';
+import Dialog from './CustomDialog';
 
 describe('Dialog tests', () => {
   const onConfirm = jest.fn();

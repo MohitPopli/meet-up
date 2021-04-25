@@ -4,7 +4,7 @@ import { TimeButtonWrapper, TimeWrapper } from '../../components/Styled/time';
 import { AllowedTimes } from './types';
 import { homeStateSelector } from '../Home/store/selectors';
 import Button from '../../components/Button/CustomButton';
-import Dialog from '../../components/Dialog/Dialog';
+import Dialog from '../../components/Dialog/CustomDialog';
 
 interface TimeContainerProps {
   onConfirm: (hour: string, message: string) => void;
