@@ -23,5 +23,4 @@ export const AllowedTimes = [
   '21',
   '22',
   '23',
-  '24',
 ];
