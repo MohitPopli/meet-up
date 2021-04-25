@@ -16,7 +16,13 @@ const MeetingConfirmation = () => {
         <strong>{selectedDate.getHours()}</strong>:<strong>00 hours</strong>. Please make sure you have stable internet
         connection.
       </span>
-      <CustomButton callback={() => dispatch(navigateToHome())} type="button" title="Back to home" text="Back" />
+      <CustomButton
+        id="nav-to-home"
+        callback={() => dispatch(navigateToHome())}
+        type="button"
+        title="Back to home"
+        text="Back"
+      />
     </MeetupConfirmWrapper>
   );
 };
