@@ -1,11 +1,21 @@
-# Getting Started with Rock Scissor Paper Game
+# Getting Started with Meet up app
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e2d85aa2-865e-4c61-8760-d4589924ed9e/deploy-status)](https://app.netlify.com/sites/meet-ups/deploys)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project consist of very simple old game known as ROCK SCISSOR PAPER.
-I have used Redux and sagas with Typescrip to implement state handling mechanism with routing. It is a simple application that helps in learning how react works with redux and sagas.
+This app is made solely for demonstration purpose. It allows you to schedule meeting with your mentor within available time slots.
 
-This app contains fully tested components in isolation using react testing library. I have used general naming convention as well basic architecture design to strucure project.
+This app contains fully tested components in isolation using react testing library. I have used general naming convention as well basic architecture design to structure project.
+
+## Technologies used
+
+1. React
+2. Redux and Immer for state management
+3. Sagas - Middlewares
+4. Firebase - Database to save meeting information
+5. React Calendar - To select meeting date
+6. Testing library - To test components
 
 ## Available Scripts
 
@@ -44,11 +54,6 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
 # demo
 
-[Demo](https://pedantic-hypatia-0e1c5d.netlify.app/)
+[Demo](https://meet-ups.netlify.app/)
