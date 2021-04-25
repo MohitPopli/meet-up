@@ -33,6 +33,7 @@ const Dialog = ({ canScheduleMeeting, closeDialog, refObject, onConfirm }: Dialo
               callback={closeDialog}
               customStyles={{ border: '1px solid #3399FF', alignSelf: 'center' }}
               title="close"
+              id="meeting-dialog-close"
             />
             <Button
               type="button"
@@ -44,6 +45,7 @@ const Dialog = ({ canScheduleMeeting, closeDialog, refObject, onConfirm }: Dialo
                 alignSelf: 'center',
               }}
               title="confirm meeting"
+              id="meeting-dialog-confirm"
             />
           </DialogButtonWrapper>
         </ContentWrapper>
@@ -60,6 +62,7 @@ const Dialog = ({ canScheduleMeeting, closeDialog, refObject, onConfirm }: Dialo
           text="Close"
           callback={() => closeDialog()}
           customStyles={{ border: '1px solid #3399FF', alignSelf: 'center' }}
+          id="error-dialog-close"
         />
       </ErrorContentWrapper>
     );

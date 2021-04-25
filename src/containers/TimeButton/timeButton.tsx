@@ -55,6 +55,7 @@ const TimeButton = ({ onConfirm }: TimeButtonProps) => {
             customStyles={{
               border: `1px solid ${isAvailable ? '#3399FF' : '#CC0000'}`,
             }}
+            id={time}
           />
         </TimeButtonWrapper>
       );
