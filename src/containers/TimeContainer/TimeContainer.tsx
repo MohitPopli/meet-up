@@ -6,11 +6,11 @@ import { homeStateSelector } from '../Home/store/selectors';
 import Button from '../../components/Button/CustomButton';
 import Dialog from '../../components/Dialog/Dialog';
 
-interface TimeButtonProps {
+interface TimeContainerProps {
   onConfirm: (hour: string, message: string) => void;
 }
 
-export const TimeButton = ({ onConfirm }: TimeButtonProps) => {
+const TimeContainer = ({ onConfirm }: TimeContainerProps) => {
   const { selectedDate, mentorBusyHours } = useSelector(homeStateSelector);
   const [isTimeAvailable, setAvailableTime] = React.useState<boolean>(false);
   const dialogRef = React.useRef<HTMLDialogElement>(null);
@@ -85,3 +85,5 @@ export const TimeButton = ({ onConfirm }: TimeButtonProps) => {
     </TimeWrapper>
   );
 };
+
+export default TimeContainer;

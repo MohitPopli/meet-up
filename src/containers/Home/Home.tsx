@@ -7,7 +7,7 @@ import { HomeWrapper } from '../../components/Styled/home';
 import firebase from '../../config';
 import { MeetUpDTO } from './store/types';
 import { MapMentorHours } from './util';
-import { TimeButton } from '../TimeButton/TimeButton';
+import TimeContainer from '../TimeContainer/TimeContainer';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -54,7 +54,9 @@ const Home = () => {
         className="calendar"
       />
 
-      {showTime && <TimeButton onConfirm={(hour: string, message: string) => meetingConfirmHandler(hour, message)} />}
+      {showTime && (
+        <TimeContainer onConfirm={(hour: string, message: string) => meetingConfirmHandler(hour, message)} />
+      )}
     </HomeWrapper>
   );
 };

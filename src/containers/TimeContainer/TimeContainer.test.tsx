@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import * as React from 'react';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
-import TimeButton from './TimeButton';
+import TimeContainer from './TimeContainer';
 
 describe('Time button test', () => {
   const onConfirm = jest.fn();
@@ -26,7 +26,7 @@ describe('Time button test', () => {
     });
     render(
       <Provider store={store}>
-        <TimeButton onConfirm={onConfirm} />
+        <TimeContainer onConfirm={onConfirm} />
       </Provider>,
     );
 
@@ -50,7 +50,7 @@ describe('Time button test', () => {
     });
     render(
       <Provider store={store}>
-        <TimeButton onConfirm={onConfirm} />
+        <TimeContainer onConfirm={onConfirm} />
       </Provider>,
     );
 
