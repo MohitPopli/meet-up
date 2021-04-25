@@ -10,7 +10,7 @@ interface TimeButtonProps {
   onConfirm: (hour: string, message: string) => void;
 }
 
-const TimeButton = ({ onConfirm }: TimeButtonProps) => {
+export const TimeButton = ({ onConfirm }: TimeButtonProps) => {
   const { selectedDate, mentorBusyHours } = useSelector(homeStateSelector);
   const [isTimeAvailable, setAvailableTime] = React.useState<boolean>(false);
   const dialogRef = React.useRef<HTMLDialogElement>(null);
@@ -85,5 +85,3 @@ const TimeButton = ({ onConfirm }: TimeButtonProps) => {
     </TimeWrapper>
   );
 };
-
-export default TimeButton;

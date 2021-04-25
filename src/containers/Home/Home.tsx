@@ -5,9 +5,9 @@ import * as homeActions from './store/actions';
 import { homeStateSelector } from './store/selectors';
 import { HomeWrapper } from '../../components/Styled/home';
 import firebase from '../../config';
-import { BusyHours, MeetUpDTO } from './store/types';
-import TimeButton from '../TimeButton/TimeButton';
+import { MeetUpDTO } from './store/types';
 import { MapMentorHours } from './util';
+import { TimeButton } from '../TimeButton/TimeButton';
 
 const Home = () => {
   const dispatch = useDispatch();
