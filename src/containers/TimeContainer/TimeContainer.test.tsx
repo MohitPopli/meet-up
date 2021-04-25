@@ -30,7 +30,7 @@ describe('Time button test', () => {
       </Provider>,
     );
 
-    expect(screen.getAllByRole('button')).toHaveLength(25);
+    expect(screen.getAllByRole('button')).toHaveLength(24);
   });
 
   test('should render time buttons with different style if mentor is busy at that time', () => {
@@ -54,7 +54,7 @@ describe('Time button test', () => {
       </Provider>,
     );
 
-    expect(screen.getAllByRole('button')).toHaveLength(25);
+    expect(screen.getAllByRole('button')).toHaveLength(24);
     expect(screen.getAllByRole('button')[1]).toHaveStyle('border: 1px solid #cc0000;');
   });
 });
