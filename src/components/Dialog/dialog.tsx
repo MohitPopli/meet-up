@@ -16,7 +16,7 @@ const Dialog = ({ canScheduleMeeting, closeDialog, refObject, onConfirm }: Dialo
   const renderContent = () => {
     if (canScheduleMeeting) {
       return (
-        <ContentWrapper>
+        <ContentWrapper data-testid="confirmation-content-dialog">
           <label htmlFor="meeting-reason"> Reason for meeting </label>
           <textarea
             id="meeting-reason"
@@ -52,10 +52,10 @@ const Dialog = ({ canScheduleMeeting, closeDialog, refObject, onConfirm }: Dialo
       );
     }
     return (
-      <ErrorContentWrapper>
+      <ErrorContentWrapper data-testid="error-content-dialog">
         <span>
           Sorry!! This time slot is currently unavailable for scheduling the meeting. Please select other time slot to
-          schedule meeting
+          schedule meeting.
         </span>
         <Button
           type="button"
