@@ -3,7 +3,6 @@ import * as React from 'react';
 import TimeButton from './TimeButton';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
-import userEvent from '@testing-library/user-event';
 
 describe('Time button test', () => {
   const onConfirm = jest.fn();
