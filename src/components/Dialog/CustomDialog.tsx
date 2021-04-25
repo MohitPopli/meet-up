@@ -1,4 +1,4 @@
-import './Dialog.css';
+import './CustomDialog.css';
 import * as React from 'react';
 import { ErrorContentWrapper, ContentWrapper, DialogButtonWrapper } from '../Styled/dialog';
 import Button from '../Button/CustomButton';
