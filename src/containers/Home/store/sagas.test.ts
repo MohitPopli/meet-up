@@ -1,6 +1,6 @@
-import { navigateToConfirmationPage } from './sagas';
 import { put } from 'redux-saga/effects';
 import { push } from 'connected-react-router';
+import { navigateToConfirmationPage } from './sagas';
 
 describe('Home Sagas tests', () => {
   let gen: any;

@@ -2,8 +2,8 @@ import * as React from 'react';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 import { render, screen } from '@testing-library/react';
-import MeetingConfirmation from './MeetingConfirmation';
 import userEvent from '@testing-library/user-event';
+import MeetingConfirmation from './MeetingConfirmation';
 import { navigateToHome } from './store/actions';
 
 describe('Meeting confirmation test', () => {

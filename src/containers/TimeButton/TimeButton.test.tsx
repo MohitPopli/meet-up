@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import * as React from 'react';
-import TimeButton from './TimeButton';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
+import TimeButton from './TimeButton';
 
 describe('Time button test', () => {
   const onConfirm = jest.fn();

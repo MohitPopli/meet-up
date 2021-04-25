@@ -22,7 +22,7 @@ const Dialog = ({ canScheduleMeeting, closeDialog, refObject, onConfirm }: Dialo
             id="meeting-reason"
             required
             value={reason}
-            onChange={ev => setReason(ev.currentTarget.value)}
+            onChange={(ev) => setReason(ev.currentTarget.value)}
             rows={5}
             cols={5}
           />

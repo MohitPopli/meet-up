@@ -9,7 +9,7 @@ const MeetingConfirmation = () => {
   const dispatch = useDispatch();
   const { selectedDate } = useSelector(homeStateSelector);
   return (
-    <MeetupConfirmWrapper data-testid='meeting-confirmation'>
+    <MeetupConfirmWrapper data-testid="meeting-confirmation">
       <span>✅</span>
       <span>
         Your meeting has been confirmed at <strong>{selectedDate.toDateString()}</strong> at{' '}

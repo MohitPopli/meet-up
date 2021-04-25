@@ -17,7 +17,7 @@ const Home = () => {
   React.useEffect(() => {
     const mentorSchedule: BusyHours[] = [];
     const data = firebase.database().ref('meetups');
-    data.once('value', dbSnapshot => {
+    data.once('value', (dbSnapshot) => {
       const items = dbSnapshot.val();
 
       Object.values(items).forEach((item: MeetUpDTO) => {
@@ -25,7 +25,7 @@ const Home = () => {
         const newDate = new Date(item.data);
 
         const isExistingEle = mentorSchedule.find(
-          schedule =>
+          (schedule) =>
             schedule.year === newDate.getFullYear() &&
             schedule.month === newDate.getMonth() &&
             schedule.date === newDate.getDate(),
@@ -69,7 +69,7 @@ const Home = () => {
       <h1>Welcome to Meet Up</h1>
       <Calender
         defaultView="month"
-        onChange={date => {
+        onChange={(date) => {
           dispatch(homeActions.setCurrentSelectedDate(date as Date));
           setShowTime(true);
         }}
