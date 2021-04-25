@@ -1,7 +1,7 @@
-import Button from '../Button/button';
-import './dialog.css';
-import { ErrorContentWrapper, ContentWrapper, DialogButtonWrapper } from '../Styled/dialog';
+import './Dialog.css';
 import * as React from 'react';
+import { ErrorContentWrapper, ContentWrapper, DialogButtonWrapper } from '../Styled/dialog';
+import Button from '../Button/CustomButton';
 
 interface DialogProps {
   canScheduleMeeting: boolean;
@@ -21,12 +21,11 @@ const Dialog = ({ canScheduleMeeting, closeDialog, refObject, onConfirm }: Dialo
           <textarea
             id="meeting-reason"
             required
-            autoFocus
             value={reason}
-            onChange={(ev) => setReason(ev.currentTarget.value)}
+            onChange={ev => setReason(ev.currentTarget.value)}
             rows={5}
             cols={5}
-          ></textarea>
+          />
           <DialogButtonWrapper>
             <Button
               type="button"

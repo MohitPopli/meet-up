@@ -12,12 +12,20 @@ interface ButtonProps {
   disabled?: boolean;
 }
 
-const Button = (props: ButtonProps) => {
+const CustomButton = (props: ButtonProps) => {
   return (
-    <StyledButton onClick={() => props.callback()} {...props} style={props.customStyles}>
+    <StyledButton
+      onClick={() => props.callback()}
+      id={props.id}
+      title={props.title}
+      value={props.value}
+      disabled={props.disabled}
+      {...props}
+      style={props.customStyles}
+    >
       {props.text}
     </StyledButton>
   );
 };
 
-export default Button;
+export default CustomButton;

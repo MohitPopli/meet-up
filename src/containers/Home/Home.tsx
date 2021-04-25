@@ -1,11 +1,12 @@
 import * as React from 'react';
-import * as homeActions from './store/actions';
 import Calender from 'react-calendar';
 import { useSelector, useDispatch } from 'react-redux';
+import * as homeActions from './store/actions';
 import { homeStateSelector } from './store/selectors';
 import { HomeWrapper } from '../../components/Styled/home';
-import TimeButton from '../TimeButton/timeButton';
 import firebase from '../../config';
+import { BusyHours, MeetUpDTO } from './store/types';
+import TimeButton from '../TimeButton/TimeButton';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -14,21 +15,53 @@ const Home = () => {
   const [showTime, setShowTime] = React.useState<boolean>(false);
 
   React.useEffect(() => {
+    const mentorSchedule: BusyHours[] = [];
     const data = firebase.database().ref('meetups');
-    data.on('value', (dbSnapshot) => {
-      let items = dbSnapshot.val();
-      console.log(items);
-    });
-  }, []);
+    data.once('value', dbSnapshot => {
+      const items = dbSnapshot.val();
 
-  const meetingConfirmHandler = (date: Date, message: string) => {
+      Object.values(items).forEach((item: MeetUpDTO) => {
+        const timeArr: string[] = [];
+        const newDate = new Date(item.data);
+
+        const isExistingEle = mentorSchedule.find(
+          schedule =>
+            schedule.year === newDate.getFullYear() &&
+            schedule.month === newDate.getMonth() &&
+            schedule.date === newDate.getDate(),
+        );
+        if (isExistingEle !== undefined) {
+          const tempArr = [newDate.getHours().toString()];
+          const updatedTimeArr = isExistingEle.time.concat(tempArr);
+          isExistingEle.time = [...updatedTimeArr];
+        } else {
+          timeArr.push(newDate.getHours().toString());
+          const busyHours: BusyHours = {
+            date: newDate.getDate(),
+            month: newDate.getMonth(),
+            year: newDate.getFullYear(),
+            time: [...timeArr],
+          };
+          mentorSchedule.push(busyHours);
+        }
+      });
+      dispatch(homeActions.setBusyHours(mentorSchedule));
+    });
+  }, [dispatch]);
+
+  const meetingConfirmHandler = (hour: string, message: string) => {
     const firebaseRef = firebase.database().ref('meetups');
-    const meetupDetail = {
-      data: date.toISOString(),
-      message: message,
+    const currentDate = selectedDate;
+    currentDate.setHours(Number(hour), 0, 0, 0);
+    const meetupDetail: MeetUpDTO = {
+      data: currentDate.toISOString(),
+      message,
     };
-    firebaseRef.push(meetupDetail);
-    setShowTime(false);
+    firebaseRef.push(meetupDetail).then(() => {
+      dispatch(homeActions.setCurrentSelectedDate(currentDate));
+      setShowTime(false);
+      dispatch(homeActions.navigateToConfirmationPage());
+    });
   };
 
   return (
@@ -36,20 +69,17 @@ const Home = () => {
       <h1>Welcome to Meet Up</h1>
       <Calender
         defaultView="month"
-        onChange={(date) => {
+        onChange={date => {
           dispatch(homeActions.setCurrentSelectedDate(date as Date));
           setShowTime(true);
         }}
-        onClickDay={(date) => console.log(date)}
+        onActiveStartDateChange={() => {
+          setShowTime(false);
+        }}
         className="calendar"
       />
 
-      {showTime && (
-        <TimeButton
-          allocatedHours={['13']}
-          onConfirm={(date: Date, message: string) => meetingConfirmHandler(date, message)}
-        />
-      )}
+      {showTime && <TimeButton onConfirm={(hour: string, message: string) => meetingConfirmHandler(hour, message)} />}
     </HomeWrapper>
   );
 };

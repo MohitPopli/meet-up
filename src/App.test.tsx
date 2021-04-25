@@ -1,13 +1,12 @@
 import * as React from 'react';
 import { render } from '@testing-library/react';
-import App from './App';
 import { createMemoryHistory } from 'history';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 import configureMockStore from 'redux-mock-store';
+import App from './App';
 
 describe('App tests', () => {
-  let wrapper;
   let history = createMemoryHistory({ initialEntries: ['/'] });
 
   beforeEach(() => {
@@ -23,7 +22,7 @@ describe('App tests', () => {
     const store = mockStore({
       home: {},
     });
-    wrapper = render(
+    render(
       <Provider store={store}>
         <Router history={history}>
           <App />

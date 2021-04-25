@@ -16,7 +16,7 @@ export const HomeWrapper = styled.main`
     width: 500px;
     background: white;
     border: none;
-    box-shadow: 0px 2px 20px 10px rgba(184,180,180,1);
+    box-shadow: 0px 2px 20px 10px rgba(184, 180, 180, 1);
     padding: 1rem;
   }
 `;
