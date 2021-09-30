@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^13.1.5",
     "@types/jest": "^26.0.15",
     "@types/lodash": "^4.14.166",
-    "@types/node": "^12.0.0",
+    "@types/node": "^16.10.2",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
     "connected-react-router": "^6.8.0",
