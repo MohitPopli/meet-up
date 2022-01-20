@@ -2156,10 +2156,12 @@
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.4.tgz#15925414e0ad2cd765bfef58842f7e26a7accb24"
   integrity sha512-1HcDas8SEj4z1Wc696tH56G8OlRaH/sqZOynNNB+HF0WOeXPaxTtbYzJY2oEfiUxjSKjhCKr+MvR7dCHcEelug==
 
-"@types/react-calendar@^3.1.4":
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/@types/react-calendar/-/react-calendar-3.1.4.tgz#7d6cb69eab5abfc93a870a025866bc67bf46c8c7"
-  integrity sha512-7yDdyPnNaKqOIp97NmPhDxaXb7pBSag+pYWBtt+vBJyyqqiMMtXzv5bdEWjVN7AWmfWdmzGsP8kg+TzvGvwwQg==
+"@types/react-calendar@^3.4.5":
+  version "3.4.5"
+  resolved "https://registry.yarnpkg.com/@types/react-calendar/-/react-calendar-3.4.5.tgz#bf156c2bfac37b5b201a212d321317d9f3f50aaf"
+  integrity sha512-GAilbiUjVlD7RZzb6mxEMd80a2dbwpo8oFabvqmg1BLxs28xPxnvHZ+zCo38VztBnQwt3qHqgmyBcXbYczPN2w==
+  dependencies:
+    "@types/react" "*"
 
 "@types/react-dom@^16.9.8":
   version "16.9.10"
